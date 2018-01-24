@@ -16,10 +16,11 @@ var BlankReplacer = function(word, blanks, letter, badGuesses) {
     } else {
         console.log("Oops! Try again?");
         goodGuess = false;
-        if (badGuesses = -1) {
-            badGuesses = [];
+        if (badGuesses.includes(letter) == false) {
+            badGuesses.push(letter);
+        } else if (badGuesses.includes(letter)) {
+            console.log("You've already tried that letter, silly.")
         }
-        badGuesses.push(letter);
         // badGuesses = this.badGuesses
     }
     // console.log('The word is: ' + blanks.join('') + '\nLetters already guessed: ' + badGuesses.join(''));
