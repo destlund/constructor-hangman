@@ -18,7 +18,8 @@ var wordList = [
 // This starts the game:
 function gameStart() {
     SelectWord(wordList); 
-    console.log(word + ', you cheater.');
+    console.log('*-------------------*\nBack to the Future!\n*-------------------*')
+    // console.log(word + ', you cheater.');
     badGuesses = []
     gameContinue();
 }
@@ -53,9 +54,9 @@ function userInput() {
         } else if (inq.guess.length = 0) {
             console.log("You didn't enter anything. Try again.")
             userInput();
-        // } else if (parseInt(inq.guess) != -1) {
-        //     console.log("You entered a number, not a letter, silly. Try again.")
-        //     userInput();
+        } else if (parseInt(inq.guess) >= 0) {
+            console.log("You entered a number, not a letter, silly. Try again.")
+            userInput();
         } else {
             BlankReplacer(word, blanks, inq.guess, badGuesses);
             gameContinue();
@@ -72,7 +73,7 @@ function playAgain() {
             message: 'Play again?'
         }
     ]).then(function(resp) {
-        if (resp == 'yes') {
+        if (resp.yes) {
             gameStart();
         } else {
             console.log('Goodbye.')

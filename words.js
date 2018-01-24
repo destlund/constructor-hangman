@@ -14,8 +14,6 @@ var SelectWord = function(wordList) {
     for ( i = 0; i < word.length; i++ ) {
         blanks.push(blank);
     }
-    console.log(blanks.join(""));
-    // this.blanks = blanks;
     return this.word   
 };
 

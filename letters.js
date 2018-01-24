@@ -1,6 +1,6 @@
 var SelectWord = require('./words.js')
 
-var BlankReplacer = function(word, blanks, letter, badGuesses) {
+var BlankReplacer = function (word, blanks, letter, badGuesses) {
     this.word = word;
     this.blanks = blanks;
     this.letter = letter;
@@ -8,7 +8,7 @@ var BlankReplacer = function(word, blanks, letter, badGuesses) {
     if (word.includes(letter)) {
         console.log("Excellent guess!")
         goodGuess = true
-        for ( i = 0; i < word.length; i++) {
+        for (i = 0; i < word.length; i++) {
             if (letter == word[i]) {
                 blanks[i] = letter;
             };
@@ -21,9 +21,7 @@ var BlankReplacer = function(word, blanks, letter, badGuesses) {
         } else if (badGuesses.includes(letter)) {
             console.log("You've already tried that letter, silly.")
         }
-        // badGuesses = this.badGuesses
     }
-    // console.log('The word is: ' + blanks.join('') + '\nLetters already guessed: ' + badGuesses.join(''));
 };
 
 
